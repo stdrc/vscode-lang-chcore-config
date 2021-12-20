@@ -1,0 +1,57 @@
+{
+    "name": "chcore-config-language-support",
+    "displayName": "ChCore Config Language Support",
+    "description": "This extension provides language support for ChCore config files.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "chconfig",
+                "aliases": [
+                    "ChCore Config",
+                    "chconfig"
+                ],
+                "filenames": [
+                    "chconfig"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "generated-chconfig",
+                "aliases": [
+                    "Generated ChCore Config",
+                    "generated-chconfig"
+                ],
+                "filenames": [
+                    ".config"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "chconfig",
+                "scopeName": "source.chconfig",
+                "path": "./syntaxes/chconfig.tmLanguage.json"
+            },
+            {
+                "scopeName": "chconfig-cmake.injection",
+                "path": "./syntaxes/chconfig-cmake.tmLanguage.json",
+                "injectTo": [
+                    "source.cmake"
+                ]
+            },
+            {
+                "language": "generated-chconfig",
+                "scopeName": "source.generated-chconfig",
+                "path": "./syntaxes/generated-chconfig.tmLanguag.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,95 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "ChCore Config",
+    "scopeName": "source.chconfig",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#configs"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#values"
+        },
+        {
+            "include": "#descriptions"
+        },
+        {
+            "include": "#include-expressions"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.chconfig",
+                    "match": "#.*$"
+                }
+            ]
+        },
+        "configs": {
+            "patterns": [
+                {
+                    "name": "entity.name.section.chconfig",
+                    "match": "\\b(CHCORE_[A-Z0-9_]*)\\b"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "name": "support.type.chconfig",
+                    "match": "\\b(BOOL|STRING|PATH)\\b"
+                },
+                {
+                    "name": "constant.language.chconfig",
+                    "match": "\\b(ON|OFF)\\b"
+                }
+            ]
+        },
+        "values": {
+            "patterns": [
+                {
+                    "include": "#strings"
+                },
+                {
+                    "name": "constant.language.chconfig",
+                    "match": "\\b(ON|OFF)\\b"
+                }
+            ]
+        },
+        "descriptions": {
+            "patterns": [
+                {
+                    "name": "markup.quote.description.chconfig",
+                    "match": "%.*$"
+                }
+            ]
+        },
+        "include-expressions": {
+            "begin": "\\b(INCLUDE)\\b\\s+",
+            "end": "\\s*$",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.control.include.chconfig"
+                }
+            },
+            "contentName": "variable.parameter.path.chconfig"
+        },
+        "strings": {
+            "name": "string.quoted.double.chconfig",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.chconfig",
+                    "match": "\\\\."
+                }
+            ]
+        }
+    }
+}

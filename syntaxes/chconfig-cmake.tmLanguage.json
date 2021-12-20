@@ -1,0 +1,39 @@
+{
+    "scopeName": "chconfig-cmake.injection",
+    "injectionSelector": "L:source.cmake",
+    "patterns": [
+        {
+            "include": "#define-expressions"
+        },
+        {
+            "include": "#include-expressions"
+        }
+    ],
+    "repository": {
+        "define-expressions": {
+            "begin": "\\b(chcore_config)\\b\\s*\\(",
+            "end": "\\)\\s*$",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.control.define.chconfig"
+                }
+            },
+            "contentName": "meta.embedded.config.chconfig",
+            "patterns": [
+                {
+                    "include": "source.chconfig"
+                }
+            ]
+        },
+        "include-expressions": {
+            "begin": "\\b(chcore_config_include)\\b\\s*\\(",
+            "end": "\\)\\s*$",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.control.include.chconfig"
+                }
+            },
+            "contentName": "variable.parameter.path.chconfig"
+        }
+    }
+}

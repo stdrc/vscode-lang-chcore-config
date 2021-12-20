@@ -1,0 +1,1 @@
+# ChCore Config Language Support

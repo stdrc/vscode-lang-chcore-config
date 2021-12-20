@@ -1,0 +1,77 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Generated ChCore Config",
+    "scopeName": "source.generated-chconfig",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#configs"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#values"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.chconfig",
+                    "match": "#.*$"
+                },
+                {
+                    "name": "comment.line.double-slash.chconfig",
+                    "match": "//.*$"
+                }
+            ]
+        },
+        "configs": {
+            "patterns": [
+                {
+                    "name": "entity.name.section.chconfig",
+                    "match": "\\b(CHCORE_[A-Z0-9_]*)\\b"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "name": "support.type.chconfig",
+                    "match": "\\b(BOOL|STRING|PATH)\\b"
+                }
+            ]
+        },
+        "values": {
+            "begin": "=",
+            "end": "$",
+            "patterns": [
+                {
+                    "include": "#strings"
+                },
+                {
+                    "name": "constant.language.chconfig",
+                    "match": "\\b(ON|OFF)\\b"
+                },
+                {
+                    "name": "string.unquoted.chconfig",
+                    "match": ".*"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.chconfig",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.chconfig",
+                    "match": "\\\\."
+                }
+            ]
+        }
+    }
+}

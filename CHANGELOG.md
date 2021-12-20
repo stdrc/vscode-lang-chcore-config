@@ -1,5 +1,5 @@
 # Change Log
 
-## unreleased
+## v0.0.1
 
 - Basic syntax highlight

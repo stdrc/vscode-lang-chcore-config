@@ -3,6 +3,7 @@
     "displayName": "ChCore Config Language Support",
     "description": "This extension provides language support for ChCore config files.",
     "version": "0.0.1",
+    "publisher": "richardchien",
     "engines": {
         "vscode": "^1.63.0"
     },
